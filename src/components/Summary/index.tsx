@@ -42,7 +42,7 @@ export function Summary() {
                     <img src={outConmeImg} alt="Saída" />
                 </header>
                 <strong>
-                    - {new Intl.NumberFormat('pt-BR', {
+                    -{new Intl.NumberFormat('pt-BR', {
                         style: 'currency',
                         currency: 'BRL',
                     }).format(summary.withdraws)}
