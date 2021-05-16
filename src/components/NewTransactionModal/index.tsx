@@ -64,11 +64,14 @@ export function NewTransactionModal({
         <h2>Cadastrar transação</h2>
         <input
           placeholder="Título"
+          type="text"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
         />
         <input
           placeholder="Valor"
+          type="number"
+          step="0.5"
           value={amount}
           onChange={(event) => setAmount(Number(event.target.value))}
         />
@@ -98,7 +101,7 @@ export function NewTransactionModal({
           </RadioBox>
         </TrasactionTypeContainer>
 
-        <input placeholder="Categoria" value={category} onChange={(event) => setCategory(event.target.value)}/>
+        <input placeholder="Categoria" type="text" value={category} onChange={(event) => setCategory(event.target.value)}/>
         <button type="submit">Cadastrar</button>
       </Container>
     </Modal>
