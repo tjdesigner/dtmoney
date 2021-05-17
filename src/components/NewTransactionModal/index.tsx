@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import Modal from "react-modal";
 import { useTransactions } from "../../hooks/useTransactions";
-import { uuid } from 'uuidv4';
+import { v4 as uuid_v4 } from "uuid";
 
 import closeImg from "./../../assets/close.svg";
 import incomeImg from "./../../assets/income.svg";
@@ -29,7 +29,7 @@ export function NewTransactionModal({
     event?.preventDefault();
     
     await createTransaction({
-      id: uuid(),
+      id: uuid_v4(),
       title,
       amount,
       category,
@@ -70,8 +70,8 @@ export function NewTransactionModal({
         />
         <input
           placeholder="Valor"
+          onFocus={(event) => setAmount(Number(event.target.value))}
           type="number"
-          step="0.5"
           value={amount}
           onChange={(event) => setAmount(Number(event.target.value))}
         />
