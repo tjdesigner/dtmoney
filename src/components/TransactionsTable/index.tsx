@@ -1,5 +1,3 @@
-import EventEmitter from "events";
-import { useCallback, useEffect, useState } from "react";
 import { useTransactions } from "../../hooks/useTransactions";
 import { Container } from "./styles";
 
