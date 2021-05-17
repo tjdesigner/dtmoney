@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState, useContext } from 'react'
+import { createContext, ReactNode, useState, useContext } from 'react'
 
 interface TransactionProps {
     id: string
@@ -28,10 +28,6 @@ export function TransactionsProvider({children}: TrasactionsProviderProps) {
         localStorage.setItem("transactions", JSON.stringify(transactionInput))
         setTransactions([...transactions, transactionInput])
     }
-
-    useEffect(() => {
-      setTransactions([...transactions])
-    }, [])
 
     return (
         <TransactionsContext.Provider value={{transactions, createTransaction}}>

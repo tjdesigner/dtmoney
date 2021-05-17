@@ -40,11 +40,6 @@ export function TransactionsTable() {
                   new Date(transaction.createdAt)
                 )}
               </td>
-              <td>
-                <button type="button" onClick={() => console.log("ASDFASDF")}>
-                  Excluir
-                </button>
-              </td>
             </tr>
           ))}
         </tbody>
