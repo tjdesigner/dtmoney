@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useEffect, useState, useContext } from 'react'
+import { createContext, ReactNode, useState, useContext } from 'react'
 
 interface TransactionProps {
     id: string
@@ -18,30 +18,19 @@ interface TrasactionsProviderProps {
 interface TransactionsContextData {
     transactions: TransactionProps[]
     createTransaction: (transaction: TransactionInput) => Promise<void>
-    deleteTransaction: (transaction: TransactionInput) => Promise<void>
 }
 
 const TransactionsContext = createContext<TransactionsContextData>({} as TransactionsContextData);
 
 export function TransactionsProvider({children}: TrasactionsProviderProps) {
     const [transactions, setTransactions] = useLocalStorage<TransactionProps[]>("transactions", []);
-   
     async function createTransaction(transactionInput: TransactionInput) {
         localStorage.setItem("transactions", JSON.stringify(transactionInput))
         setTransactions([...transactions, transactionInput])
     }
 
-    async function deleteTransaction(transactionInput: TransactionInput) {
-      localStorage.removeItem("transactions")
-      setTransactions([...transactions, transactionInput])
-  }
-
-    useEffect(() => {
-      setTransactions([...transactions])
-    }, [])
-
     return (
-        <TransactionsContext.Provider value={{transactions, createTransaction, deleteTransaction}}>
+        <TransactionsContext.Provider value={{transactions, createTransaction}}>
             {children}
         </TransactionsContext.Provider>
     )
