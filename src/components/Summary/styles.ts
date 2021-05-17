@@ -6,6 +6,11 @@ export const Container = styled.div`
     gap: 2rem;
     margin-top: -10rem;
 
+    @media only screen and (max-width: 768px) {
+        display: flex;
+        flex-direction: column
+    }
+
     div {
         background: var(--shape);
         padding: 1.5rem;
