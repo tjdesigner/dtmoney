@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTransactions } from "../../hooks/useTransactions";
 import { Container } from "./styles";
 
@@ -19,14 +19,14 @@ export function TransactionsTable() {
     window.location.reload();
   }
 
-  function handleDeleteItemTransaction(id: string) {
+  const handleDeleteItemTransaction = useCallback((id: string) => {
     var i = dataStorage.findIndex((d:any) => d.id === id)    
     if (i !== -1) {
       dataStorage.splice(i, 1);
       localStorage.setItem("transactions", JSON.stringify(dataStorage));
       window.location.reload();
     }
-  }
+  }, [dataStorage])
 
   return (
     <Container>
