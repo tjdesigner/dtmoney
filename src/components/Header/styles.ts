@@ -12,12 +12,16 @@ export const Content = styled.header`
     align-items: center;
     justify-content: space-between;
 
+    img {
+        max-width: 140px;
+    }
+
     button {
         font-size: 1rem;
         color: #fff;
         background: var(--blue-light);
         border: 0;
-        padding: 0 2rem;
+        padding: 0 1rem;
         border-radius: .25rem;
         height: 3rem;
         transition: 0.2s;
