@@ -17,7 +17,7 @@ export const Content = styled.header`
         color: #fff;
         background: var(--blue-light);
         border: 0;
-        padding: 0 2rem;
+        padding: 0 1rem;
         border-radius: .25rem;
         height: 3rem;
         transition: 0.2s;

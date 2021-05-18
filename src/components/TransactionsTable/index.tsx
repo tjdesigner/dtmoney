@@ -1,14 +1,33 @@
+import { useCallback, useEffect, useState } from "react";
 import { useTransactions } from "../../hooks/useTransactions";
 import { Container } from "./styles";
 
 export function TransactionsTable() {
   const { transactions } = useTransactions();
+  const [dataStorage, setDataStorage] = useState()
 
   function handleDeleteAllTransactions() {
     localStorage.removeItem("transactions");
-    console.log("asdfasdfasdfasdf");
-    window.location.reload()
+    window.location.reload();
   }
+
+  function handleDeleteItemTransaction(id: string) {
+    console.log(id);
+    loadData()
+  }
+
+  const loadData = useCallback(async () => {
+    const response = await localStorage.getItem('transactions')
+    if(response) {
+      setDataStorage(JSON.parse(response))
+      console.log(dataStorage);
+    }
+  },[dataStorage])
+
+
+  useEffect(() => {
+    localStorage.getItem('transactions')
+  }, [])
 
   return (
     <Container>
@@ -39,6 +58,11 @@ export function TransactionsTable() {
                 {new Intl.DateTimeFormat("pt-BR").format(
                   new Date(transaction.createdAt)
                 )}
+              </td>
+              <td className="btn-col">
+                <button type="button" onClick={() => handleDeleteItemTransaction(transaction.id)}>
+                  Excluir
+                </button>
               </td>
             </tr>
           ))}
