@@ -43,6 +43,7 @@ export function NewTransactionModal({
     setType('deposit')
     setCreatedAt(new Date())
     onRequestCLose()
+    window.location.reload();
   }
 
   return (
