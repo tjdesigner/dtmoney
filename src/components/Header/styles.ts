@@ -12,6 +12,10 @@ export const Content = styled.header`
     align-items: center;
     justify-content: space-between;
 
+    img {
+        max-width: 140px;
+    }
+
     button {
         font-size: 1rem;
         color: #fff;
