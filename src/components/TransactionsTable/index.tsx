@@ -1,10 +1,18 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTransactions } from "../../hooks/useTransactions";
 import { Container } from "./styles";
 
 export function TransactionsTable() {
   const { transactions } = useTransactions();
-  const [dataStorage, setDataStorage] = useState()
+  const [dataStorage, setDataStorage] = useState([]);
+
+  useEffect(() => {
+    const response = localStorage.getItem("transactions");
+    if (response) {
+      const res = JSON.parse(response);
+      setDataStorage(res);
+    }
+  }, []);
 
   function handleDeleteAllTransactions() {
     localStorage.removeItem("transactions");
@@ -12,22 +20,13 @@ export function TransactionsTable() {
   }
 
   function handleDeleteItemTransaction(id: string) {
-    console.log(id);
-    loadData()
-  }
-
-  const loadData = useCallback(async () => {
-    const response = await localStorage.getItem('transactions')
-    if(response) {
-      setDataStorage(JSON.parse(response))
-      console.log(dataStorage);
+    var i = dataStorage.findIndex((d:any) => d.id === id)    
+    if (i !== -1) {
+      dataStorage.splice(i, 1);
+      localStorage.setItem("transactions", JSON.stringify(dataStorage));
+      window.location.reload();
     }
-  },[dataStorage])
-
-
-  useEffect(() => {
-    localStorage.getItem('transactions')
-  }, [])
+  }
 
   return (
     <Container>
