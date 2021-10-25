@@ -1,26 +1,9 @@
-[
-  {
-    "relation": [
-      "delegate_permission/common.handle_all_urls"
-    ],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "br.com.nav",
-      "sha256_cert_fingerprints": [
-        "60:C7:34:BA:33:0D:25:2A:FD:8F:14:FB:25:A1:F1:E2:AA:B5:47:AE:2D:29:68:7F:D0:90:84:41:F9:03:B7:9C"
-      ]
-    }
-  },
-  {
-    "relation": [
-      "delegate_permission/common.handle_all_urls"
-    ],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "br.com.nav.hml",
-      "sha256_cert_fingerprints": [
-        "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C"
-      ]
-    }
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "br.com.nav.hml",
+    "sha256_cert_fingerprints":
+    ["EA:11:45:92:EB:A8:87:38:F0:E5:C2:65:FC:DD:41:2E:BA:73:06:63:DE:E0:97:03:37:A9:25:11:9D:B5:A5:25"]
   }
-]
+}]
