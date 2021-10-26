@@ -30,10 +30,22 @@ export function App() {
     setIsNewTransactionModalOpen(false);
   }
 
+  const fallbackToStore = () => {
+    window.location.replace('market://details?id=com.example.deeplink');
+  };
+  const openApp = () => {
+    window.location.replace('finor://');
+  };
+  const triggerAppOpen = () => {
+    openApp();
+    setTimeout(fallbackToStore, 250);
+  };
+
   return (
     <TransactionsProvider>
-      {IS_MOBILE && <a href="finor://">OPEN APP</a>}
+
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
+      {IS_MOBILE && <button onClick={triggerAppOpen}>OPEN APP</button>}
       <Dashboard />
       <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestCLose={handleCloseNewTransactionModal} />
       <GlobalStyle />
