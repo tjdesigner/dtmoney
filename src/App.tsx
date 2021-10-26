@@ -34,7 +34,7 @@ export function App() {
   //   window.location.replace('market://details?id=com.example.deeplink');
   // };
   const openApp = () => {
-    window.location.replace('com.example.deeplink');
+    window.location.replace('https://finor.neltify.app');
   };
   const triggerAppOpen = () => {
     openApp();
