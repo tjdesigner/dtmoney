@@ -5,7 +5,6 @@ import { Header } from "./components/Header";
 import { NewTransactionModal } from "./components/NewTransactionModal";
 import { GlobalStyle } from "./styles/global";
 import { TransactionsProvider } from "./hooks/useTransactions";
-import { PopupMobileApp } from "./components/PopupMobileApp";
 
 Modal.setAppElement('#root')
 
@@ -26,9 +25,6 @@ export function App() {
     setIsNewTransactionModalOpen(true);
   }
 
-  const handleClicking = () => {
-
-  }
 
   function handleCloseNewTransactionModal() {
     setIsNewTransactionModalOpen(false);
