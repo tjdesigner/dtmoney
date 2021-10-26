@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from "react-modal";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
@@ -41,13 +41,18 @@ export function App() {
   //   console.log("AQUI")
   // };
 
+  useEffect(() => {
+    const someLink = document.querySelector('a');
+    someLink?.click()
+  }, [])
+
   return (
     <TransactionsProvider>
 
       {/* {IS_MOBILE && <a href='finor://finor'>OPEN APP</a>} */}
       {IS_MOBILE &&
         // eslint-disable-next-line react/jsx-no-target-blank
-        <a href="https://finor.netlify.app" target="_blank">https://finor.netlify.app</a>}
+        <a href="https://finor.netlify.app" target="_blank">OPEN APP</a>}
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
       <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestCLose={handleCloseNewTransactionModal} />
