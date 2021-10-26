@@ -46,13 +46,9 @@ export function App() {
     someLink?.click()
   }, [])
 
-  useEffect(() => {
-    openApp()
-  }, [openApp])
-
   return (
     <TransactionsProvider>
-
+      {openApp()}
       {/* {IS_MOBILE && <a href='finor://finor'>OPEN APP</a>} */}
       {IS_MOBILE &&
         // eslint-disable-next-line react/jsx-no-target-blank
