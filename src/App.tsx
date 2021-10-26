@@ -34,10 +34,11 @@ export function App() {
   //   window.location.replace('market://details?id=com.example.deeplink');
   // };
   const openApp = () => {
-    window.location.replace('finor://');
+    window.location.replace('com.example.deeplink');
   };
   const triggerAppOpen = () => {
     openApp();
+    console.log("AQUI")
   };
 
   return (
