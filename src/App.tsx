@@ -44,8 +44,8 @@ export function App() {
   return (
     <TransactionsProvider>
 
-      {IS_MOBILE && <a href='finor://finor'>OPEN APP</a>}
-      {IS_MOBILE && <a href='https://finor.netlify.app'>OPEN APP2</a>}
+      {/* {IS_MOBILE && <a href='finor://finor'>OPEN APP</a>} */}
+      {IS_MOBILE && <a href='https://finor.netlify.app/finor'>OPEN APP2</a>}
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
       <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestCLose={handleCloseNewTransactionModal} />
