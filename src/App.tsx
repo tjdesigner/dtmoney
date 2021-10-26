@@ -5,8 +5,19 @@ import { Header } from "./components/Header";
 import { NewTransactionModal } from "./components/NewTransactionModal";
 import { GlobalStyle } from "./styles/global";
 import { TransactionsProvider } from "./hooks/useTransactions";
+import { PopupMobileApp } from "./components/PopupMobileApp";
 
 Modal.setAppElement('#root')
+
+const IS_MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+
+if (IS_MOBILE) {
+  // true for mobile device
+  console.log("mobile device")
+} else {
+  // false for not mobile device
+  console.log("not mobile device")
+}
 
 export function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
@@ -15,15 +26,20 @@ export function App() {
     setIsNewTransactionModalOpen(true);
   }
 
-  function handleCloseNewTransactionModal(){
+  const handleClicking = () => {
+
+  }
+
+  function handleCloseNewTransactionModal() {
     setIsNewTransactionModalOpen(false);
   }
-  
+
   return (
     <TransactionsProvider>
-      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal}/>
+      {IS_MOBILE && <a href="https://finor.netlify.app">OPEN APP</a>}
+      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
-      <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestCLose={handleCloseNewTransactionModal}/>
+      <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestCLose={handleCloseNewTransactionModal} />
       <GlobalStyle />
     </TransactionsProvider>
   );

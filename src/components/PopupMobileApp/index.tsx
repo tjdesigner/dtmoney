@@ -4,17 +4,16 @@ import logoImg from "./../../assets/logo.svg";
 import { Container, Content } from "./styles";
 
 interface HeaderProps {
-  onOpenNewTransactionModal: () => void;
+  openMobileApp?: () => void;
 }
 
-export function Header({ onOpenNewTransactionModal }: HeaderProps) {
+export function PopupMobileApp({ openMobileApp }: HeaderProps) {
 
   return (
     <Container>
       <Content>
         <img src={logoImg} alt="dt-money" />
-        <button onClick={onOpenNewTransactionModal} type="button">Nova transação</button>
-
+        <button onClick={openMobileApp} type="button">Nova transação</button>
       </Content>
     </Container>
   );
