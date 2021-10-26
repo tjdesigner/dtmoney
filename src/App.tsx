@@ -34,7 +34,7 @@ export function App() {
   //   window.location.replace('market://details?id=com.example.deeplink');
   // };
   const openApp = () => {
-    window.location.replace('https://finor.netlify.app/');
+    window.location.replace('finor://finor');
   };
   const triggerAppOpen = () => {
     openApp();
@@ -44,8 +44,8 @@ export function App() {
   return (
     <TransactionsProvider>
 
-      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       {IS_MOBILE && <button onClick={triggerAppOpen}>OPEN APP</button>}
+      <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
       <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestCLose={handleCloseNewTransactionModal} />
       <GlobalStyle />
