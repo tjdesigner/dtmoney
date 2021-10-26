@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
 import { NewTransactionModal } from "./components/NewTransactionModal";
 import { GlobalStyle } from "./styles/global";
 import { TransactionsProvider } from "./hooks/useTransactions";
+import { ButtonOpenApp, Container } from "./styles";
 
 Modal.setAppElement('#root')
 
@@ -31,33 +32,14 @@ export function App() {
     setIsNewTransactionModalOpen(false);
   }
 
-  // const fallbackToStore = () => {
-  //   window.location.replace('market://details?id=com.example.deeplink');
-  // };
-  // const openApp = () => {
-  //   window.location.replace('finor://finor');
-  // };
-  // const triggerAppOpen = () => {
-  //   openApp();
-  //   console.log("AQUI")
-  // };
-
-  const openApp = useCallback(() => {
-    const someLink = document.querySelector('a');
-    someLink?.click()
-  }, []);
-
-  useEffect(() => {
-    openApp()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
   return (
     <TransactionsProvider>
-      {/* {IS_MOBILE && <a href='finor://finor'>OPEN APP</a>} */}
       {IS_MOBILE &&
         // eslint-disable-next-line react/jsx-no-target-blank
-        <a href="https://finor.netlify.app" target="_blank">OPEN APP</a>}
+        (<Container>
+          <ButtonOpenApp href="https://finor.netlify.app" target="_blank">OPEN APP</ButtonOpenApp>
+        </Container>)
+      }
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
       <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestCLose={handleCloseNewTransactionModal} />
