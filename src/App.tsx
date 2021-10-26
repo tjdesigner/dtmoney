@@ -44,7 +44,7 @@ export function App() {
   return (
     <TransactionsProvider>
 
-      {IS_MOBILE && <button onClick={triggerAppOpen}>OPEN APP</button>}
+      {IS_MOBILE && <a href='finor://finor'>OPEN APP</a>}
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
       <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestCLose={handleCloseNewTransactionModal} />
