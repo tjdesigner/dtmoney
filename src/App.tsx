@@ -33,13 +33,13 @@ export function App() {
   // const fallbackToStore = () => {
   //   window.location.replace('market://details?id=com.example.deeplink');
   // };
-  const openApp = () => {
-    window.location.replace('finor://finor');
-  };
-  const triggerAppOpen = () => {
-    openApp();
-    console.log("AQUI")
-  };
+  // const openApp = () => {
+  //   window.location.replace('finor://finor');
+  // };
+  // const triggerAppOpen = () => {
+  //   openApp();
+  //   console.log("AQUI")
+  // };
 
   return (
     <TransactionsProvider>
