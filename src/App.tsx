@@ -46,7 +46,8 @@ export function App() {
 
       {/* {IS_MOBILE && <a href='finor://finor'>OPEN APP</a>} */}
       {IS_MOBILE &&
-        <a href="https://finor.netlify.app" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://finor.netlify.app&amp;source=gmail&amp;ust=1635363030184000&amp;usg=AFQjCNFCfLE-rT_kPMYTbn6U0ZcIAQmaUw">https://finor.netlify.app</a>}
+        // eslint-disable-next-line react/jsx-no-target-blank
+        <a href="https://finor.netlify.app" target="_blank">https://finor.netlify.app</a>}
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
       <Dashboard />
       <NewTransactionModal isOpen={isNewTransactionModalOpen} onRequestCLose={handleCloseNewTransactionModal} />
