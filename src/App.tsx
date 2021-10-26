@@ -30,15 +30,14 @@ export function App() {
     setIsNewTransactionModalOpen(false);
   }
 
-  const fallbackToStore = () => {
-    window.location.replace('market://details?id=com.example.deeplink');
-  };
+  // const fallbackToStore = () => {
+  //   window.location.replace('market://details?id=com.example.deeplink');
+  // };
   const openApp = () => {
     window.location.replace('finor://');
   };
   const triggerAppOpen = () => {
     openApp();
-    setTimeout(fallbackToStore, 250);
   };
 
   return (
