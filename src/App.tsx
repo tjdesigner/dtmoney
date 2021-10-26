@@ -37,7 +37,7 @@ export function App() {
       {IS_MOBILE &&
         // eslint-disable-next-line react/jsx-no-target-blank
         (<Container>
-          <ButtonOpenApp href="https://finor.netlify.app" target="_blank">OPEN APP</ButtonOpenApp>
+          <ButtonOpenApp href="finor://finor" target="_blank">OPEN APP</ButtonOpenApp>
         </Container>)
       }
       <Header onOpenNewTransactionModal={handleOpenNewTransactionModal} />
