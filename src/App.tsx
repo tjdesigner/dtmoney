@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Modal from "react-modal";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
@@ -41,10 +41,14 @@ export function App() {
   //   console.log("AQUI")
   // };
 
-  useEffect(() => {
+  const openApp = useCallback(() => {
     const someLink = document.querySelector('a');
     someLink?.click()
   }, [])
+
+  useEffect(() => {
+    openApp()
+  }, [openApp])
 
   return (
     <TransactionsProvider>
