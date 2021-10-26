@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import Modal from "react-modal";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
@@ -17,6 +17,7 @@ if (IS_MOBILE) {
   // false for not mobile device
   console.log("not mobile device")
 }
+
 
 export function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
@@ -44,11 +45,14 @@ export function App() {
   const openApp = useCallback(() => {
     const someLink = document.querySelector('a');
     someLink?.click()
+  }, []);
+
+  useEffect(() => {
+    openApp()
   }, [])
 
   return (
     <TransactionsProvider>
-      {openApp()}
       {/* {IS_MOBILE && <a href='finor://finor'>OPEN APP</a>} */}
       {IS_MOBILE &&
         // eslint-disable-next-line react/jsx-no-target-blank
