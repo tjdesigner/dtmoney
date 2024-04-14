@@ -3,7 +3,9 @@
         "apps": [],
         "details": [
             {
-                "appIDs": "1481895003.com.xvision.grupoguanabara",
+                "appIDs": [
+                    "1481895003.com.xvision.grupoguanabara"
+                ],
                 "components": [
                     {
                         "#": "no_universal_links",
