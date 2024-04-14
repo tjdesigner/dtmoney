@@ -1,0 +1,18 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "1481895003.com.xvision.grupoguanabara",
+                "paths": [
+                    "*"
+                ]
+            }
+        ],
+        "webcredentials": {
+            "apps": [
+                "1481895003.com.xvision.grupoguanabara"
+            ]
+        }
+    }
+}

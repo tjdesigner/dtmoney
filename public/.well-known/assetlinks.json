@@ -1,9 +1,14 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.example.deeplink",
-    "sha256_cert_fingerprints":
-    ["73:FC:72:9B:4F:DE:41:55:BC:33:DF:EB:6D:62:BF:10:3A:58:70:39:EC:B7:C2:2F:71:C8:3C:E8:00:AC:27:7B"]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.xvision.grupoguanabara",
+      "sha256_cert_fingerprints": [
+        "73:FC:72:9B:4F:DE:41:55:BC:33:DF:EB:6D:62:BF:10:3A:58:70:39:EC:B7:C2:2F:71:C8:3C:E8:00:AC:27:7B"
+      ]
+    }
   }
-}]
+]
