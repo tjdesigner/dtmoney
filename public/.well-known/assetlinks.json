@@ -4,7 +4,7 @@
       "delegate_permission/common.handle_all_urls"
     ],
     "target": {
-      "namespace": "android_app",
+      "namespace": "com.xvision.grupoguanabara",
       "package_name": "com.xvision.grupoguanabara",
       "sha256_cert_fingerprints": [
         "0F:ED:58:81:34:83:57:B5:08:FD:65:3E:11:58:3E:B0:B5:9F:D7:17:EA:9C:D2:80:5B:E8:68:02:F0:01:35:8C"
